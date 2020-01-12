@@ -1,18 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="ERPFYPModelStoreContainer" CdmEntityContainer="ERPFYPEntities">
-    <EntitySetMapping Name="C__MigrationHistory">
-      <EntityTypeMapping TypeName="ERPFYPModel.C__MigrationHistory">
-        <MappingFragment StoreEntitySet="__MigrationHistory">
-          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
-          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
-          <ScalarProperty Name="Model" ColumnName="Model" />
-          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="AspNetRoles">
-      <EntityTypeMapping TypeName="ERPFYPModel.AspNetRole">
+      <EntityTypeMapping TypeName="IsTypeOf(ERPFYPModel.AspNetRole)">
         <MappingFragment StoreEntitySet="AspNetRoles">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -20,7 +10,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="AspNetUserClaims">
-      <EntityTypeMapping TypeName="ERPFYPModel.AspNetUserClaim">
+      <EntityTypeMapping TypeName="IsTypeOf(ERPFYPModel.AspNetUserClaim)">
         <MappingFragment StoreEntitySet="AspNetUserClaims">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -30,7 +20,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="AspNetUserLogins">
-      <EntityTypeMapping TypeName="ERPFYPModel.AspNetUserLogin">
+      <EntityTypeMapping TypeName="IsTypeOf(ERPFYPModel.AspNetUserLogin)">
         <MappingFragment StoreEntitySet="AspNetUserLogins">
           <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
           <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
@@ -39,7 +29,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="AspNetUsers">
-      <EntityTypeMapping TypeName="ERPFYPModel.AspNetUser">
+      <EntityTypeMapping TypeName="IsTypeOf(ERPFYPModel.AspNetUser)">
         <MappingFragment StoreEntitySet="AspNetUsers">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Email" ColumnName="Email" />
@@ -56,24 +46,61 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="AspNetUserRoles" TypeName="ERPFYPModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
-      <EndProperty Name="AspNetRoles">
-        <ScalarProperty Name="Id" ColumnName="RoleId" />
-      </EndProperty>
-      <EndProperty Name="AspNetUsers">
-        <ScalarProperty Name="Id" ColumnName="UserId" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <EntitySetMapping Name="Departments">
-      <EntityTypeMapping TypeName="ERPFYPModel.Department">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="IsTypeOf(ERPFYPModel.sysdiagram)">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="ERPFYPModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles" />
+    <EntitySetMapping Name="C__MigrationHistory1">
+      <EntityTypeMapping TypeName="ERPFYPModel.C__MigrationHistory1">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="categories">
+      <EntityTypeMapping TypeName="ERPFYPModel.category">
+        <MappingFragment StoreEntitySet="categories">
+          <ScalarProperty Name="category_name" ColumnName="category_name" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customers">
+      <EntityTypeMapping TypeName="ERPFYPModel.customer">
+        <MappingFragment StoreEntitySet="customers">
+          <ScalarProperty Name="zip_code" ColumnName="zip_code" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="street" ColumnName="street" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Department1">
+      <EntityTypeMapping TypeName="ERPFYPModel.Department1">
         <MappingFragment StoreEntitySet="Department">
           <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Employees">
-      <EntityTypeMapping TypeName="ERPFYPModel.Employee">
+    <EntitySetMapping Name="Employee1">
+      <EntityTypeMapping TypeName="ERPFYPModel.Employee1">
         <MappingFragment StoreEntitySet="Employee">
           <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
           <ScalarProperty Name="Salary" ColumnName="Salary" />
@@ -87,16 +114,96 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="ERPFYPModel.sysdiagram">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="definition" ColumnName="definition" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="name" ColumnName="name" />
+    <EntitySetMapping Name="order_items">
+      <EntityTypeMapping TypeName="ERPFYPModel.order_items">
+        <MappingFragment StoreEntitySet="order_items">
+          <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="list_price" ColumnName="list_price" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="item_id" ColumnName="item_id" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="orders">
+      <EntityTypeMapping TypeName="ERPFYPModel.order">
+        <MappingFragment StoreEntitySet="orders">
+          <ScalarProperty Name="staff_id" ColumnName="staff_id" />
+          <ScalarProperty Name="wh_id" ColumnName="wh_id" />
+          <ScalarProperty Name="shipped_date" ColumnName="shipped_date" />
+          <ScalarProperty Name="required_date" ColumnName="required_date" />
+          <ScalarProperty Name="order_date" ColumnName="order_date" />
+          <ScalarProperty Name="order_status" ColumnName="order_status" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products">
+      <EntityTypeMapping TypeName="ERPFYPModel.product">
+        <MappingFragment StoreEntitySet="products">
+          <ScalarProperty Name="list_price" ColumnName="list_price" />
+          <ScalarProperty Name="model_year" ColumnName="model_year" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="Vendor_id" ColumnName="Vendor_id" />
+          <ScalarProperty Name="product_name" ColumnName="product_name" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Staffs">
+      <EntityTypeMapping TypeName="ERPFYPModel.Staff">
+        <MappingFragment StoreEntitySet="Staff">
+          <ScalarProperty Name="manager_id" ColumnName="manager_id" />
+          <ScalarProperty Name="wh_id" ColumnName="wh_id" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="staff_id" ColumnName="staff_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stocks">
+      <EntityTypeMapping TypeName="ERPFYPModel.stock">
+        <MappingFragment StoreEntitySet="stocks">
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="wh_id" ColumnName="wh_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vendors">
+      <EntityTypeMapping TypeName="ERPFYPModel.Vendor">
+        <MappingFragment StoreEntitySet="Vendors">
+          <ScalarProperty Name="Vendor_name" ColumnName="Vendor_name" />
+          <ScalarProperty Name="Vendor_id" ColumnName="Vendor_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Warehouses">
+      <EntityTypeMapping TypeName="ERPFYPModel.Warehouse">
+        <MappingFragment StoreEntitySet="Warehouse">
+          <ScalarProperty Name="zip_code" ColumnName="zip_code" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="street" ColumnName="street" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="wh_name" ColumnName="wh_name" />
+          <ScalarProperty Name="wh_id" ColumnName="wh_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles1" TypeName="ERPFYPModel.AspNetUserRoles1" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetUser">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+      <EndProperty Name="AspNetRole">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

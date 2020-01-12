@@ -33,5 +33,17 @@ namespace Erpfyp.Models
         public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<C__MigrationHistory1> C__MigrationHistory1 { get; set; }
+        public virtual DbSet<category> categories { get; set; }
+        public virtual DbSet<customer> customers { get; set; }
+        public virtual DbSet<Department1> Department1 { get; set; }
+        public virtual DbSet<Employee1> Employee1 { get; set; }
+        public virtual DbSet<order_items> order_items { get; set; }
+        public virtual DbSet<order> orders { get; set; }
+        public virtual DbSet<product> products { get; set; }
+        public virtual DbSet<Staff> Staffs { get; set; }
+        public virtual DbSet<stock> stocks { get; set; }
+        public virtual DbSet<Vendor> Vendors { get; set; }
+        public virtual DbSet<Warehouse> Warehouses { get; set; }
     }
 }

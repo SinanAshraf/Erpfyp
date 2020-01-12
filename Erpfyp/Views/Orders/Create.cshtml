@@ -1,0 +1,46 @@
+﻿@model RelevantPizza.ViewModels.OrderAddViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Order</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="OrderType" class="control-label"></label>
+                @Html.DropDownList("Types", Html.GetEnumSelectList(typeof(OrderType)),
+   "Select Type",
+   new { @class = "form-control" })
+                <span asp-validation-for="OrderType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerID" class="control-label"></label>
+                @Html.DropDownList("CustomerID", Model.CustomerList,
+   "Select Customer",
+   new { @class = "form-control" })
+                <span asp-validation-for="OrderType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" formaction="AddItem" value="Add Item" class="btn btn-info" />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" formaction="Create" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

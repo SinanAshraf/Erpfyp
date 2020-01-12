@@ -1,0 +1,82 @@
+﻿@model RelevantPizza.ViewModels.OrderItemAddViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>OrderItem</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Type" class="control-label"></label>
+                @Html.DropDownList("Type", Html.GetEnumSelectList(typeof(OrderItemType)),
+   "Select Type",
+   new { @class = "form-control" })
+                <span asp-validation-for="Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InventoryItemType" class="control-label"></label>
+                @Html.DropDownListFor(i => i.InventoryItemType, Html.GetEnumSelectList(typeof(InventoryItemType)),
+   "Select Type",
+   new
+        {
+            @class = "form-control",
+       @onchange = "var form = document.forms[0]; form.action='GetInventoryItems'; form.submit();",
+   })
+                <span asp-validation-for="InventoryItemType" class="text-danger"></span>
+            </div>
+            @if (Model != null)
+            {
+                <div class="form-group">
+                    <label asp-for="InventoryID" class="control-label"></label>
+                    <select class="form-control" asp-for="InventoryID" asp-items="Model?.InventoryList"></select>                    
+                    <span asp-validation-for="InventoryID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    @if (Model.InventoryItemType != 0)
+                    {
+                        <input type="submit" value="Add @Model.InventoryItemType" class="btn btn-primary" asp-action="AddInventoryItemToOrderItem" />
+                    }
+                </div>
+
+                if (Model.OrderItemDetails.Any())
+                {
+                    <table>
+                        @foreach(var item in Model.OrderItemDetails)
+                        {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.Type</td>
+                        </tr>
+                        }
+                    </table>
+                }
+            }
+                <div class="form-group">
+                    <label asp-for="Price" class="control-label"></label>
+                    <label asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script type="text/javascript">
+
+    </script>
+}

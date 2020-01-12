@@ -79,4 +79,3 @@ c:\users\a\documents\visual studio 2015\Projects\Erpfyp\Erpfyp\bin\Microsoft.Owi
 c:\users\a\documents\visual studio 2015\Projects\Erpfyp\Erpfyp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 c:\users\a\documents\visual studio 2015\Projects\Erpfyp\Erpfyp\obj\Debug\Erpfyp.dll
 c:\users\a\documents\visual studio 2015\Projects\Erpfyp\Erpfyp\obj\Debug\Erpfyp.pdb
-C:\Users\a\documents\visual studio 2015\Projects\Erpfyp\Erpfyp\obj\Debug\Erpfyp.csprojResolveAssemblyReference.cache

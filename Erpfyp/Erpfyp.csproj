@@ -208,6 +208,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AspNetRole.cs">
       <DependentUpon>ERPFYPMODEL.tt</DependentUpon>
@@ -221,13 +222,28 @@
     <Compile Include="Models\AspNetUserLogin.cs">
       <DependentUpon>ERPFYPMODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\category.cs">
+      <DependentUpon>ERPFYPMODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\customer.cs">
+      <DependentUpon>ERPFYPMODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\C__MigrationHistory.cs">
+      <DependentUpon>ERPFYPMODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C__MigrationHistory1.cs">
       <DependentUpon>ERPFYPMODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Department.cs">
       <DependentUpon>ERPFYPMODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Department1.cs">
+      <DependentUpon>ERPFYPMODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Employee.cs">
+      <DependentUpon>ERPFYPMODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee1.cs">
       <DependentUpon>ERPFYPMODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ERPFYPMODEL.Context.cs">
@@ -247,7 +263,28 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\order.cs">
+      <DependentUpon>ERPFYPMODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\order_items.cs">
+      <DependentUpon>ERPFYPMODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\product.cs">
+      <DependentUpon>ERPFYPMODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Staff.cs">
+      <DependentUpon>ERPFYPMODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\stock.cs">
+      <DependentUpon>ERPFYPMODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>ERPFYPMODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Vendor.cs">
+      <DependentUpon>ERPFYPMODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Warehouse.cs">
       <DependentUpon>ERPFYPMODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -269,6 +306,7 @@
       <DependentUpon>ERPFYPMODEL.edmx</DependentUpon>
       <LastGenOutput>ERPFYPMODEL.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\ERPFYPMODEL.edmx.sql" />
     <Content Include="Models\ERPFYPMODEL.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ERPFYPMODEL.edmx</DependentUpon>
@@ -355,6 +393,21 @@
     <Content Include="Views\AspNetUsers\Details.cshtml" />
     <Content Include="Views\AspNetUsers\Edit.cshtml" />
     <Content Include="Views\AspNetUsers\Index.cshtml" />
+    <Content Include="Views\InventoryItems\Create.cshtml" />
+    <Content Include="Views\InventoryItems\Delete.cshtml" />
+    <Content Include="Views\InventoryItems\Details.cshtml" />
+    <Content Include="Views\InventoryItems\Edit.cshtml" />
+    <Content Include="Views\InventoryItems\Index.cshtml" />
+    <Content Include="Views\OrderItems\Create.cshtml" />
+    <Content Include="Views\OrderItems\Delete.cshtml" />
+    <Content Include="Views\OrderItems\Details.cshtml" />
+    <Content Include="Views\OrderItems\Edit.cshtml" />
+    <Content Include="Views\OrderItems\Index.cshtml" />
+    <Content Include="Views\Orders\Create.cshtml" />
+    <Content Include="Views\Orders\Delete.cshtml" />
+    <Content Include="Views\Orders\Details.cshtml" />
+    <Content Include="Views\Orders\Edit.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
